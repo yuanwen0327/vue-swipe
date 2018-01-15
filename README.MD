@@ -89,6 +89,15 @@ Work on a Vue instance:
 }
 ```
 
+Image lazyload:
+```html
+<swipe class="my-swipe">
+  <swipe-item class="slide1"><img data-src="path/to/1.jpg"></swipe-item>
+  <swipe-item class="slide2"><img data-src="path/to/2.jpg"></swipe-item>
+  <swipe-item class="slide3"><img data-src="path/to/3.jpg"></swipe-item>
+</swipe>
+```
+
 # Options
 ## Attributes
 Here list Props on swipe component

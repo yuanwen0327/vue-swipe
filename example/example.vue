@@ -34,6 +34,15 @@
       <swipe-item class="slide2">Slide2</swipe-item>
       <swipe-item class="slide3">Slide3</swipe-item>
     </swipe>
+
+    <br>
+
+    <h1>Lazy image</h1>
+    <swipe class="my-swipe">
+      <swipe-item class="slide1"><img data-src="./images/nature1.jpg"></swipe-item>
+      <swipe-item class="slide2"><img data-src="./images/nature2.jpg"></swipe-item>
+      <swipe-item class="slide3"><img data-src="./images/nature3.jpg"></swipe-item>
+    </swipe>
   </div>
 </template>
 
@@ -63,6 +72,11 @@
     color: #fff;
     font-size: 30px;
     text-align: center;
+  }
+  .my-swipe img{
+    display: block;
+    width: 100%;
+    height: 100%;
   }
   .slide1 {
     background-color: #0089dc;

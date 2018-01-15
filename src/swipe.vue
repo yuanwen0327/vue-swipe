@@ -194,6 +194,7 @@
 
           if (index === this.defaultIndex) {
             addClass(child.$el, 'is-active');
+            this.setImgUrl(child.$el);
           }
         });
 
@@ -247,7 +248,7 @@
         }
 
         var newIndex;
-
+        var newPage;
         var oldPage = this.$children[index].$el;
 
         if (towards === 'prev') {
@@ -270,12 +271,16 @@
           }
         }
 
+        if (newIndex !== undefined) {
+          newPage = this.$children[newIndex].$el;
+          this.setImgUrl(newPage);
+        }
+
         var callback = () => {
-          if (newIndex !== undefined) {
-            var newPage = this.$children[newIndex].$el;
+          if (newPage) {
             removeClass(oldPage, 'is-active');
             addClass(newPage, 'is-active');
-
+  
             this.index = newIndex;
 
             this.$emit('change', newIndex, index);
@@ -505,6 +510,13 @@
         if (!this.dragging) return;
         this.doOnTouchEnd(event);
         this.dragging = false;
+      },
+
+      setImgUrl(el){
+        var _lazyImg = el.querySelector('img[data-src]');
+        if(_lazyImg && !_lazyImg.src){
+          _lazyImg.src = _lazyImg.dataset.src;
+        }
       }
     },
 
