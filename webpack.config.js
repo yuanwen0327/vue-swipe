@@ -11,6 +11,6 @@ options.output = {
 options.externals = {
   vue: 'Vue'
 };
-options.plugins = [new ExtractTextPlugin('vue-swipe.css')];
-options.vue.loaders.css = ExtractTextPlugin.extract('style', 'css');
+// options.plugins = [new ExtractTextPlugin('vue-swipe.css')];
+// options.vue.loaders.css = ExtractTextPlugin.extract('style', 'css');
 module.exports = options;
